@@ -1,13 +1,16 @@
-.button{
-    color: var(--color-primary);
-    background-color: var(--color-black);
-    border: 2px solid var(--color-primary);
-    border-radius: 8px;
-    padding: 10px 20px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+.button {
+  color: var(--color-primary);
+  background-color: var(--color-black);
+  border: 2px solid var(--color-primary);
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
 }
 
-.button:hover{
-    background-color: var(--color-primary);
-    color: var(--color-black);
-    cursor: pointer;
+.button:hover {
+  background-color: var(--color-primary);
+  color: var(--color-black);
+  cursor: pointer;
 }
