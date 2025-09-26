@@ -1,0 +1,31 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+  padding: 20px 40px;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transform: translateY(-50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.left {
+  left: 0px;
+}
+
+.right {
+  right: 0px;
+}

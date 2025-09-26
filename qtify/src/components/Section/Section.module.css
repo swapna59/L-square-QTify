@@ -1,15 +1,43 @@
-.wrapper{
-    display: flex;
-  gap: 20px; /* space between cards */
-  overflow-x: auto;
-  padding: 10px;
-  scroll-behavior: smooth;
+.titleRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 10px;
+  margin-bottom: 10px;
 }
-.wrapper::-webkit-scrollbar {
-  height: 8px;
+.toggleText {
+  color: var(--color-primary);
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+}
+.cardsWrapper {
+  width: 100%;
+  overflow-x: auto; /* enable horizontal scroll */
+  overflow-y: hidden;
+  scrollbar-width: none; /* hide scrollbar in Firefox */
+  background-color: black;
+  padding: 10px;
 }
 
-.wrapper::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3);
-  border-radius: 4px;
+.cardsWrapper::-webkit-scrollbar {
+  display: none; /* hide scrollbar in Chrome/Safari */
+}
+
+.wrapper {
+  display: flex;
+  gap: 16px; /* spacing between cards */
+  padding: 10px;
+}
+
+/* when collapse mode */
+.wrapper.collapse {
+  flex-wrap: wrap; /* allows grid-like rows */
+  justify-content: flex-start;
+  overflow-x: hidden; /* no horizontal scroll */
+}
+
+/* when show all mode */
+.wrapper.scroll {
+  flex-wrap: nowrap; /* keep cards in one row */
 }

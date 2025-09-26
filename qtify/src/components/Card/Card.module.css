@@ -1,16 +1,45 @@
 .card {
   background: #121212;
   border-radius: 8px;
-  padding: 10px;
+  /* padding: 10px; */
   text-align: center;
+  width: 159px;
+  flex-shrink: 0;
 }
 
 .card img {
   width: 100%;
   height: auto;
   border-radius: 8px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+.chip {
+  margin: 5px;
+  background-color: black;
+  color: white;
 }
 
 .titleWrapper {
   margin-top: 8px;
+}
+.banner {
+  background-color: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+/* .wrapper {
+  display: flex;
+  gap: 20px; 
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.wrapper::-webkit-scrollbar {
+  height: 8px;
+} */
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
 }

@@ -2,3 +2,7 @@
   --color-primary: #34c94b;
   --color-black: #121212;
 }
+
+body {
+  overflow-x: hidden;
+}
