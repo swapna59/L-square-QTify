@@ -1,0 +1,16 @@
+.card {
+  background: #121212;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.titleWrapper {
+  margin-top: 8px;
+}

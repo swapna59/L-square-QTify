@@ -1,17 +1,43 @@
-import './App.css';
-import Hero from './components/Hero/Hero';
-import Navbar from './components/Navbar/Navbar';
-import { Routes, Route } from 'react-router-dom';
+import { StyledEngineProvider } from "@mui/system";
+import "./App.css";
+import React, { useEffect } from "react";
+import Navbar from "./components/Navbar/Navbar";
+import { Outlet } from "react-router-dom";
+import {
+  fetchGenres,
+  fetchNewAlbums,
+  fetchSongs,
+  fetchTopAlbums,
+} from "./api/api";
 
 function App() {
+  const [data, setData] = React.useState({});
+
+  const generateData = (key, source) => {
+    source().then((data) => {
+      setData((prevState) => {
+        return { ...prevState, [key]: data };
+      });
+    });
+  };
+
+  useEffect(() => {
+    generateData("topAlbums", fetchTopAlbums);
+    generateData("newAlbums", fetchNewAlbums);
+    generateData("songs", fetchSongs);
+    generateData("genres", fetchGenres);
+  }, []);
+
+  const { topAlbums = [], newAlbums = [], songs = [], genres = [] } = data;
+
   return (
-    <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Hero />} />
-        
-      </Routes>
-    </div>
+    <>
+      <StyledEngineProvider injectFirst>
+        <Navbar searchData={[...topAlbums, ...newAlbums]} />
+        <Outlet context={{ data: { topAlbums, newAlbums, songs, genres } }} />
+        <footer>Copyright &copy; 2022</footer>
+      </StyledEngineProvider>
+    </>
   );
 }
 

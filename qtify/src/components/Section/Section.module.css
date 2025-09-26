@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+  gap: 20px; /* space between cards */
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+.wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
